@@ -1,0 +1,43 @@
+﻿@page
+@model ContosoUniversity.Pages.Stations.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Station</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Station.StationName" class="control-label"></label>
+                <input asp-for="Station.StationName" class="form-control" />
+                <span asp-validation-for="Station.StationName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Station.Address" class="control-label"></label>
+                <input asp-for="Station.Address" class="form-control" />
+                <span asp-validation-for="Station.Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Station.DivisionID" class="control-label"></label>
+                <select asp-for="Station.DivisionID" class ="form-control" asp-items="ViewBag.DivisionID"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
