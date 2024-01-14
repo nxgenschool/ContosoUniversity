@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Navigation>
+	<MenuItem>
+		<Text>Home</Text>
+		<Url>/</Url>
+	</MenuItem>
+	<MenuItem>
+		<Text>About</Text>
+		<Url>/About</Url>
+	</MenuItem>
+	<MenuItem>
+		<Text>Services</Text>
+		<Url>/Services</Url>
+	<SubMenu>
+			<MenuItem>
+				<Text>Service 1</Text>
+				<Url>/Services/Service1</Url>
+			</MenuItem>
+			<MenuItem>
+				<Text>Service 2</Text>
+				<Url>/Services/Service2</Url>
+			</MenuItem>
+		</SubMenu>
+	</MenuItem>
+	<!-- Add more menu items as needed -->
+</Navigation>

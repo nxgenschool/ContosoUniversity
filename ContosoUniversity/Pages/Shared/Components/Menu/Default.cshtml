@@ -1,0 +1,77 @@
+﻿@model List<ContosoUniversity.MenuItem>
+
+@* <ul class="navbar-nav">
+    @foreach (var menuItem in Model)
+    {
+        <li class="nav-item">
+            <a class="nav-link" href="@menuItem.Url">@menuItem.Text</a>
+            @if (menuItem.SubMenu != null && menuItem.SubMenu.Any())
+            {
+                <ul class="nav" style="display: none;">
+                    @foreach (var subMenuItem in menuItem.SubMenu)
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" href="@subMenuItem.Url">@subMenuItem.Text</a>
+                        </li>
+                    }
+                </ul>
+            }
+        </li>
+    }
+</ul>
+ *@
+
+@* <ul class="navbar-nav">
+    @foreach (var menuItem in Model)
+    {
+        <li class="nav-item">
+            <a class="nav-link" href="@menuItem.Url">@menuItem.Text</a>
+            @if (menuItem.SubMenu != null && menuItem.SubMenu.Count > 0)
+            {
+                <ul class="submenu" style="display: none;">
+                    @foreach (var subMenuItem in menuItem.SubMenu)
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" href="@subMenuItem.Url">@subMenuItem.Text</a>
+                        </li>
+                    }
+                </ul>
+            }
+        </li>
+    }
+</ul> *@
+
+<ul class="navbar-nav">
+    @foreach (var menuItem in Model)
+    {
+        <li class="nav-item">
+            <a class="nav-link" href="@menuItem.Url">@menuItem.Text</a>
+            @if (menuItem.SubMenu != null && menuItem.SubMenu.Count > 0)
+            {
+                <ul class="submenu">
+                    @foreach (var subMenuItem in menuItem.SubMenu)
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" href="@subMenuItem.Url">@subMenuItem.Text</a>
+                        </li>
+                    }
+                </ul>
+            }
+        </li>
+    }
+</ul>
+
+@* <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var menuItems = document.querySelectorAll('.nav-item');
+        menuItems.forEach(function (menuItem) {
+            menuItem.addEventListener('click', function () {
+                var submenu = this.querySelector('.submenu');
+                if (submenu) {
+                    // Toggle the visibility of the submenu
+                    submenu.style.display = (submenu.style.display === 'block' ? 'none' : 'block');
+                }
+            });
+        });
+    });
+</script> *@
